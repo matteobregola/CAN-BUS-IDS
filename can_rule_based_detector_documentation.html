@@ -1,0 +1,1270 @@
+<!DOCTYPE html><html><head>
+      <title>can_rule_based_detector_documentation</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\matte\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.26\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag:not(.token){display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="can-rule-based-detector-documentation">CAN Rule-Based Detector Documentation </h1>
+<p>Documentation for <code>can_rule_based_detector_simplified_split.ipynb</code>.</p>
+<p>This document explains how the simplified CAN bus intrusion detection notebook works. It covers the current notebook pipeline only. It does not include the additional CSV feature-export wrapper discussed afterward.</p>
+<hr>
+<h2 id="1-purpose-of-the-notebook">1. Purpose of the notebook </h2>
+<p>The notebook implements a rule-based intrusion detection system for CAN bus traffic.</p>
+<p>The design is based on two separated stages:</p>
+<ol>
+<li>
+<p><strong>Training / calibration stage</strong></p>
+<ul>
+<li>Uses a benign-only CAN dataset.</li>
+<li>Learns what normal traffic looks like.</li>
+<li>Calculates global and per-CAN-ID thresholds.</li>
+<li>Saves those thresholds into a JSON detector profile.</li>
+</ul>
+</li>
+<li>
+<p><strong>Evaluation stage</strong></p>
+<ul>
+<li>Loads the saved detector profile.</li>
+<li>Extracts the same compact feature set from one or more evaluation files.</li>
+<li>Applies explicit rules for common CAN attack families.</li>
+<li>Prints predictions, rule activations, suspicious rows, and metrics when labels are available.</li>
+</ul>
+</li>
+</ol>
+<p>The main goal is to avoid retraining each time an evaluation file changes. Once the benign profile is saved, the evaluation cell can be rerun repeatedly with different files.</p>
+<hr>
+<h2 id="2-high-level-architecture">2. High-level architecture </h2>
+<p>The notebook is organized into the following blocks:</p>
+<table>
+<thead>
+<tr>
+<th>Notebook section</th>
+<th>Main responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Configuration</td>
+<td>Defines file paths, column names, feature settings, and rule settings.</td>
+</tr>
+<tr>
+<td>Constants and Configuration</td>
+<td>Defines CAN limits, column configuration, and output columns.</td>
+</tr>
+<tr>
+<td>CSV Loading and Column Standardization</td>
+<td>Reads CSV files and converts different schemas into a canonical format.</td>
+</tr>
+<tr>
+<td>Preprocessing</td>
+<td>Parses timestamps, CAN IDs, payloads, DLC, and diagnostic fields.</td>
+</tr>
+<tr>
+<td>Compact Feature Extraction</td>
+<td>Generates only the features used by the rules.</td>
+</tr>
+<tr>
+<td>End-to-End Feature Wrapper</td>
+<td>Runs standardization, preprocessing, and feature extraction together.</td>
+</tr>
+<tr>
+<td>Rule-Based Detector</td>
+<td>Learns benign profiles, saves/loads JSON profiles, and predicts attacks.</td>
+</tr>
+<tr>
+<td>Evaluation Helpers</td>
+<td>Normalizes labels and computes metrics.</td>
+</tr>
+<tr>
+<td>Pipeline Functions</td>
+<td>Provides user-facing training and evaluation functions.</td>
+</tr>
+<tr>
+<td>Training Stage</td>
+<td>Optional cell that creates or updates the saved profile.</td>
+</tr>
+<tr>
+<td>Evaluation Stage</td>
+<td>Reusable cell that evaluates files using the saved profile.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="3-user-configuration">3. User configuration </h2>
+<p>The main configuration cell defines the values that the user normally edits.</p>
+<h3 id="file-paths">File paths </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>TRAINING_FILE <span class="token operator">=</span> <span class="token string">"benign_training_dataset.csv"</span>
+DETECTOR_PROFILE_FILE <span class="token operator">=</span> <span class="token string">"can_detector_profile.json"</span>
+EVALUATION_FILES <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"evaluation_dataset_with_attacks.csv"</span><span class="token punctuation">]</span>
+</code></pre><ul>
+<li><code>TRAINING_FILE</code> is the benign-only training CSV used to calibrate the detector.</li>
+<li><code>DETECTOR_PROFILE_FILE</code> is the JSON file where thresholds and learned normal behavior are saved.</li>
+<li><code>EVALUATION_FILES</code> is a list of one or more CSV files to evaluate.</li>
+</ul>
+<h3 id="execution-flags">Execution flags </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>RUN_TRAINING_STAGE <span class="token operator">=</span> <span class="token boolean">False</span>
+RUN_EVALUATION_STAGE <span class="token operator">=</span> <span class="token boolean">True</span>
+</code></pre><ul>
+<li>Set <code>RUN_TRAINING_STAGE = True</code> only when training or updating the detector profile.</li>
+<li>Set it back to <code>False</code> when repeatedly evaluating files.</li>
+<li><code>RUN_EVALUATION_STAGE = True</code> runs the evaluation cell.</li>
+</ul>
+<h3 id="csv-column-mapping">CSV column mapping </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>TIMESTAMP_COL <span class="token operator">=</span> <span class="token string">"timestamp"</span>
+ARBITRATION_ID_COL <span class="token operator">=</span> <span class="token string">"arbitration_id"</span>
+DATA_FIELD_COL <span class="token operator">=</span> <span class="token string">"data_field"</span>
+LABEL_COL <span class="token operator">=</span> <span class="token string">"attack"</span>
+BYTE_COLS <span class="token operator">=</span> <span class="token boolean">None</span>
+</code></pre><p>These values map the user's CSV columns to the canonical columns expected by the notebook.</p>
+<ul>
+<li><code>TIMESTAMP_COL</code> is the packet timestamp column.</li>
+<li><code>ARBITRATION_ID_COL</code> is the CAN arbitration ID column.</li>
+<li><code>DATA_FIELD_COL</code> is the payload column.</li>
+<li><code>LABEL_COL</code> is optional and is used only for evaluation metrics.</li>
+<li><code>BYTE_COLS</code> can be used when payload bytes are stored in separate columns instead of one data field.</li>
+</ul>
+<h3 id="feature-extraction-settings">Feature extraction settings </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>MAX_PAYLOAD_BYTES <span class="token operator">=</span> <span class="token number">8</span>
+ROLLING_PACKET_WINDOW <span class="token operator">=</span> <span class="token number">100</span>
+TIME_WINDOW_SECONDS <span class="token operator">=</span> <span class="token number">1.0</span>
+</code></pre><ul>
+<li><code>MAX_PAYLOAD_BYTES</code> limits how many payload bytes are considered. The default value, 8, matches classical CAN.</li>
+<li><code>ROLLING_PACKET_WINDOW</code> controls rolling ID diversity and entropy features.</li>
+<li><code>TIME_WINDOW_SECONDS</code> controls rate-based features such as packet rate per second.</li>
+</ul>
+<p>These settings are saved inside the detector profile during training. Evaluation then reuses the saved values to avoid training/evaluation mismatch.</p>
+<h3 id="rule-calibration-settings">Rule calibration settings </h3>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>HIGH_QUANTILE <span class="token operator">=</span> <span class="token number">0.995</span>
+LOW_QUANTILE <span class="token operator">=</span> <span class="token number">0.005</span>
+MIN_ATTACK_SCORE <span class="token operator">=</span> <span class="token number">2.0</span>
+</code></pre><ul>
+<li><code>HIGH_QUANTILE</code> is used to learn upper normal thresholds from benign traffic.</li>
+<li><code>LOW_QUANTILE</code> is used to learn lower normal thresholds from benign traffic.</li>
+<li><code>MIN_ATTACK_SCORE</code> is the minimum rule score required to label a packet as an attack.</li>
+</ul>
+<hr>
+<h2 id="4-canonical-input-schema">4. Canonical input schema </h2>
+<p>Internally, the notebook standardizes all input files into this canonical schema:</p>
+<table>
+<thead>
+<tr>
+<th>Canonical column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>timestamp</code></td>
+<td>Packet timestamp before parsing.</td>
+</tr>
+<tr>
+<td><code>arbitration_id</code></td>
+<td>Raw CAN arbitration ID before parsing.</td>
+</tr>
+<tr>
+<td><code>data_field</code></td>
+<td>Raw payload field before normalization.</td>
+</tr>
+<tr>
+<td><code>__true_label</code></td>
+<td>Optional preserved true label, used only for metrics.</td>
+</tr>
+<tr>
+<td><code>attack</code></td>
+<td>Temporary compatibility column, immediately dropped during preprocessing.</td>
+</tr>
+</tbody>
+</table>
+<p>The true label is never used for feature extraction, threshold calibration, or prediction. It is only used later to compute evaluation metrics.</p>
+<hr>
+<h2 id="5-csv-loading-and-standardization">5. CSV loading and standardization </h2>
+<h3 id="load_can_csv"><code>load_can_csv()</code> </h3>
+<p>This function reads a CSV file using <code>pandas.read_csv()</code> and preserves text-like values as strings. This is important because CAN IDs and payloads may be hexadecimal strings, and automatic numeric conversion could damage formatting.</p>
+<p>It supports two modes:</p>
+<ul>
+<li>CSV with header, which is the default.</li>
+<li>CSV without header, where explicit column names are supplied.</li>
+</ul>
+<h3 id="_build_data_field_from_byte_columns"><code>_build_data_field_from_byte_columns()</code> </h3>
+<p>This helper is used when the payload is split across separate byte columns, for example:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>byte_0, byte_1, byte_2, ..., byte_7
+</code></pre><p>It converts each valid byte to a two-character hexadecimal representation and joins the bytes into a single payload string.</p>
+<p>Example:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>[1, 10, 255] -&gt; "010AFF"
+</code></pre><p>Invalid byte values are skipped.</p>
+<h3 id="standardize_raw_can_columns"><code>standardize_raw_can_columns()</code> </h3>
+<p>This function converts dataset-specific column names into the canonical format.</p>
+<p>It checks that the timestamp and arbitration ID columns exist. Then it either:</p>
+<ul>
+<li>Copies the configured payload column, or</li>
+<li>Builds the payload from <code>BYTE_COLS</code>.</li>
+</ul>
+<p>If a label column exists, it is copied to <code>__true_label</code>. This preserved label is not used by the detector itself.</p>
+<hr>
+<h2 id="6-preprocessing">6. Preprocessing </h2>
+<p>Preprocessing converts raw CAN packet fields into clean, rule-ready diagnostic columns.</p>
+<p>The main function is:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>preprocess_can_dataframe<span class="token punctuation">(</span>raw_df<span class="token punctuation">,</span> max_payload_bytes<span class="token operator">=</span>CAN_CLASSIC_MAX_BYTES<span class="token punctuation">)</span>
+</code></pre><h3 id="61-timestamp-parsing">6.1 Timestamp parsing </h3>
+<p>The notebook creates:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>timestamp_raw</code></td>
+<td>Original timestamp value.</td>
+</tr>
+<tr>
+<td><code>timestamp_seconds</code></td>
+<td>Numeric timestamp converted with <code>pd.to_numeric()</code>.</td>
+</tr>
+<tr>
+<td><code>timestamp_parse_valid</code></td>
+<td>Boolean flag showing whether timestamp parsing succeeded.</td>
+</tr>
+<tr>
+<td><code>time_from_start_s</code></td>
+<td>Seconds from the first valid timestamp.</td>
+</tr>
+</tbody>
+</table>
+<p>The dataframe is sorted by <code>timestamp_seconds</code> using stable chronological sorting. Equal timestamps keep their original order.</p>
+<h3 id="62-can-arbitration-id-parsing">6.2 CAN arbitration ID parsing </h3>
+<p>The helper <code>_parse_can_identifier()</code> parses CAN IDs robustly.</p>
+<p>Parsing rules:</p>
+<table>
+<thead>
+<tr>
+<th>Input form</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x123</code></td>
+<td>Hexadecimal.</td>
+</tr>
+<tr>
+<td><code>123</code></td>
+<td>Decimal, unless it contains A-F.</td>
+</tr>
+<tr>
+<td><code>1AB</code></td>
+<td>Hexadecimal because it contains A-F.</td>
+</tr>
+<tr>
+<td>Invalid value</td>
+<td>Converted to <code>NaN</code>.</td>
+</tr>
+<tr>
+<td>Negative or above <code>0x1FFFFFFF</code></td>
+<td>Converted to <code>NaN</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Generated columns:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>arbitration_id_raw</code></td>
+<td>Original CAN ID value.</td>
+</tr>
+<tr>
+<td><code>arbitration_id</code></td>
+<td>Parsed numeric CAN ID.</td>
+</tr>
+<tr>
+<td><code>arbitration_id_parse_valid</code></td>
+<td>Whether parsing succeeded.</td>
+</tr>
+<tr>
+<td><code>arbitration_id_hex</code></td>
+<td>Human-readable hexadecimal representation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63-payload-normalization">6.3 Payload normalization </h3>
+<p>The helper <code>_normalize_payload_hex()</code> cleans payload values.</p>
+<p>It performs the following operations:</p>
+<ol>
+<li>Converts the payload to uppercase text.</li>
+<li>Removes a leading <code>0x</code> if present.</li>
+<li>Removes common separators: spaces, hyphens, colons, underscores, and commas.</li>
+<li>Checks whether the result contains only hexadecimal characters.</li>
+<li>Checks whether the number of nibbles is even.</li>
+</ol>
+<p>Generated columns:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data_field_raw</code></td>
+<td>Original payload value.</td>
+</tr>
+<tr>
+<td><code>payload_hex_normalized</code></td>
+<td>Clean uppercase payload string.</td>
+</tr>
+<tr>
+<td><code>payload_is_valid_hex</code></td>
+<td>True if the payload is valid even-length hexadecimal.</td>
+</tr>
+<tr>
+<td><code>payload_is_missing</code></td>
+<td>True if the payload is missing or empty.</td>
+</tr>
+<tr>
+<td><code>payload_has_odd_nibble_count</code></td>
+<td>True if the payload has an odd number of hex nibbles.</td>
+</tr>
+<tr>
+<td><code>dlc</code></td>
+<td>Data Length Code, computed as payload hex length divided by 2.</td>
+</tr>
+<tr>
+<td><code>payload_exceeds_configured_length</code></td>
+<td>True when DLC exceeds <code>MAX_PAYLOAD_BYTES</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="7-compact-feature-extraction">7. Compact feature extraction </h2>
+<p>The function <code>extract_can_features()</code> generates the compact set of features used by the simplified detector.</p>
+<p>Unlike the earlier, more complex notebook, this version does not expand every byte, nibble, bit, or binary string. It keeps only the features that are actually consumed by the rules.</p>
+<h3 id="71-timing-and-rate-features">7.1 Timing and rate features </h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Computation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>delta_t_global_s</code></td>
+<td>Time since previous packet.</td>
+<td><code>timestamp_seconds.diff()</code></td>
+</tr>
+<tr>
+<td><code>delta_t_same_id_s</code></td>
+<td>Time since previous packet with the same CAN ID.</td>
+<td>Group by <code>arbitration_id</code>, then compute timestamp difference.</td>
+</tr>
+<tr>
+<td><code>packet_rate_last_time_window_hz</code></td>
+<td>Global packet rate in the recent time window.</td>
+<td>Count packets in <code>[t - TIME_WINDOW_SECONDS, t]</code>, divided by <code>TIME_WINDOW_SECONDS</code>.</td>
+</tr>
+<tr>
+<td><code>same_id_rate_last_time_window_hz</code></td>
+<td>Per-ID packet rate in the recent time window.</td>
+<td>Count packets with the same ID in <code>[t - TIME_WINDOW_SECONDS, t]</code>, divided by <code>TIME_WINDOW_SECONDS</code>.</td>
+</tr>
+<tr>
+<td><code>consecutive_id_streak_length</code></td>
+<td>Length of the current uninterrupted same-ID streak.</td>
+<td>Increment count while consecutive packets have the same CAN ID.</td>
+</tr>
+<tr>
+<td><code>prev_arbitration_id</code></td>
+<td>Previous packet's CAN ID.</td>
+<td>Shift parsed CAN ID by one row.</td>
+</tr>
+</tbody>
+</table>
+<p>These features mainly support detection of flooding, periodicity violations, and unexpected message sequences.</p>
+<h3 id="72-rolling-id-diversity-features">7.2 Rolling ID diversity features </h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Computation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rolling_unique_id_count</code></td>
+<td>Number of different CAN IDs in a rolling packet window.</td>
+<td>Count unique factorized CAN IDs over <code>ROLLING_PACKET_WINDOW</code>.</td>
+</tr>
+<tr>
+<td><code>rolling_id_entropy_bits</code></td>
+<td>Entropy of CAN ID distribution in the rolling packet window.</td>
+<td>Shannon entropy over factorized CAN IDs.</td>
+</tr>
+</tbody>
+</table>
+<p>These features are useful for identifying fuzzy/random traffic, where many different CAN IDs may appear in a short sequence.</p>
+<h3 id="73-payload-features">7.3 Payload features </h3>
+<p>Payload features are extracted from a fixed-width byte matrix derived from <code>payload_hex_normalized</code>.</p>
+<p>Invalid payloads produce <code>NaN</code> values for payload-dependent features.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Computation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>payload_byte_sum</code></td>
+<td>Sum of payload byte values.</td>
+<td>Convert payload hex to bytes and sum valid bytes.</td>
+</tr>
+<tr>
+<td><code>payload_byte_entropy_bits</code></td>
+<td>Entropy of byte values inside the payload.</td>
+<td>Shannon entropy over payload bytes.</td>
+</tr>
+<tr>
+<td><code>payload_hamming_distance_prev_same_id</code></td>
+<td>Bit-level difference from previous same-ID payload.</td>
+<td>XOR current payload bytes with previous same-ID payload bytes and count changed bits.</td>
+</tr>
+</tbody>
+</table>
+<p>These features support detection of payload profile deviations, malformed data, and replay-like repeated payloads with abnormal timing.</p>
+<hr>
+<h2 id="8-end-to-end-feature-wrapper">8. End-to-end feature wrapper </h2>
+<p>The function <code>extract_features_for_rule_detector()</code> combines three steps:</p>
+<ol>
+<li><code>standardize_raw_can_columns()</code></li>
+<li><code>preprocess_can_dataframe()</code></li>
+<li><code>extract_can_features()</code></li>
+</ol>
+<p>It returns:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>features_df<span class="token punctuation">,</span> true_labels
+</code></pre><ul>
+<li><code>features_df</code> contains all parsed fields and generated features.</li>
+<li><code>true_labels</code> contains labels only if the input CSV had a configured label column.</li>
+</ul>
+<p>This function is used both in training and evaluation, ensuring that training and evaluation files are processed consistently.</p>
+<hr>
+<h2 id="9-detector-class">9. Detector class </h2>
+<p>The core detector is implemented in:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>CANRuleBasedDetector
+</code></pre><p>It has three main responsibilities:</p>
+<ol>
+<li>Learn benign thresholds using <code>fit()</code>.</li>
+<li>Save and load detector profiles using <code>save()</code> and <code>load()</code>.</li>
+<li>Apply explicit attack rules using <code>predict()</code>.</li>
+</ol>
+<hr>
+<h2 id="10-training--calibration-logic">10. Training / calibration logic </h2>
+<p>Training uses benign-only feature data.</p>
+<p>The detector does not learn attack signatures from attack samples. Instead, it learns normal behavior and flags deviations from that behavior.</p>
+<h3 id="101-learned-global-thresholds">10.1 Learned global thresholds </h3>
+<p>The detector calculates these global thresholds:</p>
+<table>
+<thead>
+<tr>
+<th>Threshold</th>
+<th>Based on feature</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>delta_t_global_low</code></td>
+<td><code>delta_t_global_s</code></td>
+<td>Very small global inter-arrival time.</td>
+</tr>
+<tr>
+<td><code>packet_rate_high</code></td>
+<td><code>packet_rate_last_time_window_hz</code></td>
+<td>Abnormally high global packet rate.</td>
+</tr>
+<tr>
+<td><code>same_id_rate_high</code></td>
+<td><code>same_id_rate_last_time_window_hz</code></td>
+<td>Abnormally high per-ID packet rate.</td>
+</tr>
+<tr>
+<td><code>consecutive_id_streak_high</code></td>
+<td><code>consecutive_id_streak_length</code></td>
+<td>Too many consecutive packets with the same ID.</td>
+</tr>
+<tr>
+<td><code>rolling_unique_id_count_high</code></td>
+<td><code>rolling_unique_id_count</code></td>
+<td>Too many unique IDs in rolling window.</td>
+</tr>
+<tr>
+<td><code>rolling_id_entropy_high</code></td>
+<td><code>rolling_id_entropy_bits</code></td>
+<td>Too much ID-distribution entropy.</td>
+</tr>
+<tr>
+<td><code>payload_entropy_high</code></td>
+<td><code>payload_byte_entropy_bits</code></td>
+<td>Too much payload byte entropy.</td>
+</tr>
+<tr>
+<td><code>hamming_same_id_high</code></td>
+<td><code>payload_hamming_distance_prev_same_id</code></td>
+<td>Too much bit-level payload change for same ID.</td>
+</tr>
+</tbody>
+</table>
+<p>Most high thresholds use <code>HIGH_QUANTILE</code>, default <code>0.995</code>. The lower inter-arrival threshold uses <code>LOW_QUANTILE</code>, default <code>0.005</code>.</p>
+<h3 id="102-learned-per-id-profiles">10.2 Learned per-ID profiles </h3>
+<p>For each benign CAN ID, the detector learns:</p>
+<table>
+<thead>
+<tr>
+<th>Profile item</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Allowed DLC values</td>
+<td>Which DLC values were observed for this CAN ID.</td>
+</tr>
+<tr>
+<td>Low same-ID delta time</td>
+<td>Lower normal timing bound for this CAN ID.</td>
+</tr>
+<tr>
+<td>High same-ID delta time</td>
+<td>Upper normal timing bound for this CAN ID.</td>
+</tr>
+<tr>
+<td>High same-ID rate</td>
+<td>Upper normal rate for this CAN ID.</td>
+</tr>
+<tr>
+<td>High hamming distance</td>
+<td>Upper normal payload bit-change bound for this CAN ID.</td>
+</tr>
+<tr>
+<td>Low payload byte sum</td>
+<td>Lower normal payload-sum bound for this CAN ID.</td>
+</tr>
+<tr>
+<td>High payload byte sum</td>
+<td>Upper normal payload-sum bound for this CAN ID.</td>
+</tr>
+</tbody>
+</table>
+<p>This per-ID calibration is important because CAN IDs often have different message frequencies, DLCs, and payload patterns.</p>
+<h3 id="103-learned-id-transitions">10.3 Learned ID transitions </h3>
+<p>The detector also learns pairs of consecutive CAN IDs observed in benign traffic:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>(previous_arbitration_id, current_arbitration_id)
+</code></pre><p>During evaluation, a transition between two known IDs can be flagged if it was never observed in the benign training file.</p>
+<hr>
+<h2 id="11-saved-detector-profile">11. Saved detector profile </h2>
+<p>After training, the detector is saved to JSON using:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>detector<span class="token punctuation">.</span>save<span class="token punctuation">(</span>profile_file<span class="token punctuation">,</span> feature_config<span class="token operator">=</span>feature_config<span class="token punctuation">)</span>
+</code></pre><p>The JSON profile includes:</p>
+<table>
+<thead>
+<tr>
+<th>JSON field</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metadata</code></td>
+<td>Creation timestamp and profile version.</td>
+</tr>
+<tr>
+<td><code>high_quantile</code></td>
+<td>High quantile used for calibration.</td>
+</tr>
+<tr>
+<td><code>low_quantile</code></td>
+<td>Low quantile used for calibration.</td>
+</tr>
+<tr>
+<td><code>min_attack_score</code></td>
+<td>Minimum score required to output an attack label.</td>
+</tr>
+<tr>
+<td><code>feature_config</code></td>
+<td>Saved feature settings such as payload length and time window.</td>
+</tr>
+<tr>
+<td><code>global_thresholds</code></td>
+<td>Global thresholds learned from benign traffic.</td>
+</tr>
+<tr>
+<td><code>allowed_ids</code></td>
+<td>CAN IDs observed in benign training data.</td>
+</tr>
+<tr>
+<td><code>allowed_dlc_by_id</code></td>
+<td>Allowed DLC values per benign CAN ID.</td>
+</tr>
+<tr>
+<td><code>allowed_transitions</code></td>
+<td>Consecutive CAN-ID transitions observed in benign traffic.</td>
+</tr>
+<tr>
+<td><code>id_thresholds</code></td>
+<td>Per-ID timing, rate, payload, and hamming thresholds.</td>
+</tr>
+</tbody>
+</table>
+<p>The profile allows future evaluation without recalculating thresholds.</p>
+<hr>
+<h2 id="12-attack-scoring-and-prediction">12. Attack scoring and prediction </h2>
+<p>The detector applies rules in <code>CANRuleBasedDetector.predict()</code>.</p>
+<p>The supported attack classes are:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token punctuation">[</span><span class="token string">"DoS"</span><span class="token punctuation">,</span> <span class="token string">"fuzzy"</span><span class="token punctuation">,</span> <span class="token string">"spoofing"</span><span class="token punctuation">,</span> <span class="token string">"replay"</span><span class="token punctuation">]</span>
+</code></pre><p>Each rule adds points to one attack class. After all rules are evaluated:</p>
+<ol>
+<li>The detector finds the class with the highest score.</li>
+<li>If the maximum score is below <code>MIN_ATTACK_SCORE</code>, the prediction becomes <code>normal</code>.</li>
+<li>Otherwise, the prediction is the highest-scoring attack class.</li>
+</ol>
+<p>Output columns include:</p>
+<table>
+<thead>
+<tr>
+<th>Output column</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>predicted_label</code></td>
+<td>Final predicted class.</td>
+</tr>
+<tr>
+<td><code>max_rule_score</code></td>
+<td>Highest attack-class score for the packet.</td>
+</tr>
+<tr>
+<td><code>score_DoS</code></td>
+<td>Total DoS score.</td>
+</tr>
+<tr>
+<td><code>score_fuzzy</code></td>
+<td>Total fuzzy score.</td>
+</tr>
+<tr>
+<td><code>score_spoofing</code></td>
+<td>Total spoofing score.</td>
+</tr>
+<tr>
+<td><code>score_replay</code></td>
+<td>Total replay score.</td>
+</tr>
+<tr>
+<td><code>rule_*</code> columns</td>
+<td>Binary indicators showing which rules fired.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="13-rules-used-by-the-detector">13. Rules used by the detector </h2>
+<p>The rules have a format like this:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>   self<span class="token punctuation">.</span>_add_rule<span class="token punctuation">(</span>scores<span class="token punctuation">,</span> flags<span class="token punctuation">,</span> <span class="token string">"DoS"</span><span class="token punctuation">,</span> <span class="token string">"high_global_packet_rate"</span><span class="token punctuation">,</span>df<span class="token punctuation">[</span><span class="token string">"packet_rate_last_time_window_hz"</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> gt<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"packet_rate_high"</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>inf<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2.0</span>
+<span class="token punctuation">)</span>
+</code></pre><p>the structure is the following:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scores</code></td>
+<td>Numerical anomaly score accumulator</td>
+</tr>
+<tr>
+<td><code>flags</code></td>
+<td>Stores which rules triggered</td>
+</tr>
+<tr>
+<td><code>"DoS"</code></td>
+<td>Attack category</td>
+</tr>
+<tr>
+<td><code>"high_global_packet_rate"</code></td>
+<td>Name of the rule</td>
+</tr>
+<tr>
+<td><code>condition</code></td>
+<td>Boolean condition determining if rule triggers</td>
+</tr>
+<tr>
+<td><code>2.0</code></td>
+<td>Severity / score weight</td>
+</tr>
+</tbody>
+</table>
+<p>Pften the conditions have something like "gt.get("packet_rate_high", np.inf)"<br>
+Get the threshold if it exists, otherwise use infinity which sets the codition false.</p>
+<h3 id="131-dos--flooding-rules">13.1 DoS / flooding rules </h3>
+<table>
+<thead>
+<tr>
+<th>Rule flag</th>
+<th style="text-align:right">Score</th>
+<th>Condition</th>
+<th>Intuition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rule_DoS_high_global_packet_rate</code></td>
+<td style="text-align:right">2.0</td>
+<td><code>packet_rate_last_time_window_hz &gt; packet_rate_high</code></td>
+<td>Too many packets globally.</td>
+</tr>
+<tr>
+<td><code>rule_DoS_very_small_global_delta_t</code></td>
+<td style="text-align:right">1.5</td>
+<td><code>delta_t_global_s &lt; delta_t_global_low</code></td>
+<td>Packets are arriving too close together.</td>
+</tr>
+<tr>
+<td><code>rule_DoS_same_id_rate_too_high</code></td>
+<td style="text-align:right">2.0</td>
+<td>Same-ID rate exceeds global or per-ID learned threshold.</td>
+<td>One ID is appearing too frequently.</td>
+</tr>
+<tr>
+<td><code>rule_DoS_long_consecutive_id_streak</code></td>
+<td style="text-align:right">1.5</td>
+<td><code>consecutive_id_streak_length &gt; consecutive_id_streak_high</code></td>
+<td>Same ID repeats for too long.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="132-fuzzy--malformed-traffic-rules">13.2 Fuzzy / malformed traffic rules </h3>
+<table>
+<thead>
+<tr>
+<th>Rule flag</th>
+<th style="text-align:right">Score</th>
+<th>Condition</th>
+<th>Intuition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rule_fuzzy_unknown_arbitration_id</code></td>
+<td style="text-align:right">3.0</td>
+<td>CAN ID not present in benign training IDs.</td>
+<td>Unknown/random IDs are suspicious.</td>
+</tr>
+<tr>
+<td><code>rule_fuzzy_invalid_payload</code></td>
+<td style="text-align:right">3.0</td>
+<td>Payload is not valid even-length hex.</td>
+<td>Malformed payload.</td>
+</tr>
+<tr>
+<td><code>rule_fuzzy_high_id_diversity</code></td>
+<td style="text-align:right">1.5</td>
+<td>Rolling unique ID count or ID entropy is above benign threshold.</td>
+<td>Randomized/fuzzy traffic often increases ID diversity.</td>
+</tr>
+<tr>
+<td><code>rule_fuzzy_high_payload_entropy</code></td>
+<td style="text-align:right">1.0</td>
+<td>Payload byte entropy is above benign threshold.</td>
+<td>Payload looks unusually random.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="133-spoofing--profile-deviation-rules">13.3 Spoofing / profile-deviation rules </h3>
+<table>
+<thead>
+<tr>
+<th>Rule flag</th>
+<th style="text-align:right">Score</th>
+<th>Condition</th>
+<th>Intuition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rule_spoofing_dlc_unusual_for_known_id</code></td>
+<td style="text-align:right">2.0</td>
+<td>Known CAN ID uses a DLC not seen during benign training.</td>
+<td>Same ID has abnormal payload length.</td>
+</tr>
+<tr>
+<td><code>rule_spoofing_same_id_timing_out_of_profile</code></td>
+<td style="text-align:right">2.0</td>
+<td>Same-ID timing is below or above the learned per-ID range.</td>
+<td>Known ID appears at abnormal timing.</td>
+</tr>
+<tr>
+<td><code>rule_spoofing_payload_sum_out_of_profile</code></td>
+<td style="text-align:right">1.5</td>
+<td>Payload byte sum is outside the learned per-ID range.</td>
+<td>Payload values differ from normal range for that ID.</td>
+</tr>
+<tr>
+<td><code>rule_spoofing_hamming_distance_out_of_profile</code></td>
+<td style="text-align:right">1.5</td>
+<td>Payload hamming distance exceeds per-ID or global threshold.</td>
+<td>Payload changes too much compared with previous same-ID message.</td>
+</tr>
+<tr>
+<td><code>rule_spoofing_unexpected_id_transition</code></td>
+<td style="text-align:right">1.5</td>
+<td>Transition between two known IDs was not seen during training.</td>
+<td>Message order differs from benign sequence.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="134-replay-like-rule">13.4 Replay-like rule </h3>
+<table>
+<thead>
+<tr>
+<th>Rule flag</th>
+<th style="text-align:right">Score</th>
+<th>Condition</th>
+<th>Intuition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rule_replay_repeated_payload_bad_timing</code></td>
+<td style="text-align:right">2.0</td>
+<td>Known ID, same payload as previous same-ID packet, and same-ID timing is abnormal.</td>
+<td>Payload repeats exactly but at suspicious timing.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="14-feature-to-rule-mapping">14. Feature-to-rule mapping </h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Main rules using it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>arbitration_id</code></td>
+<td>Unknown ID, known-ID DLC checks, per-ID timing/rate/payload thresholds, ID transitions.</td>
+</tr>
+<tr>
+<td><code>prev_arbitration_id</code></td>
+<td>Unexpected ID transition.</td>
+</tr>
+<tr>
+<td><code>dlc</code></td>
+<td>DLC unusual for known ID.</td>
+</tr>
+<tr>
+<td><code>payload_is_valid_hex</code></td>
+<td>Invalid payload.</td>
+</tr>
+<tr>
+<td><code>delta_t_global_s</code></td>
+<td>Very small global delta time.</td>
+</tr>
+<tr>
+<td><code>delta_t_same_id_s</code></td>
+<td>Same-ID timing out of profile, replay repeated payload bad timing.</td>
+</tr>
+<tr>
+<td><code>packet_rate_last_time_window_hz</code></td>
+<td>High global packet rate.</td>
+</tr>
+<tr>
+<td><code>same_id_rate_last_time_window_hz</code></td>
+<td>Same-ID rate too high.</td>
+</tr>
+<tr>
+<td><code>consecutive_id_streak_length</code></td>
+<td>Long consecutive ID streak.</td>
+</tr>
+<tr>
+<td><code>rolling_unique_id_count</code></td>
+<td>High ID diversity.</td>
+</tr>
+<tr>
+<td><code>rolling_id_entropy_bits</code></td>
+<td>High ID diversity.</td>
+</tr>
+<tr>
+<td><code>payload_byte_sum</code></td>
+<td>Payload sum out of profile.</td>
+</tr>
+<tr>
+<td><code>payload_byte_entropy_bits</code></td>
+<td>High payload entropy.</td>
+</tr>
+<tr>
+<td><code>payload_hamming_distance_prev_same_id</code></td>
+<td>Hamming distance out of profile, replay repeated payload bad timing.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="15-training-pipeline">15. Training pipeline </h2>
+<p>The training function is:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>train_detector_and_save_profile<span class="token punctuation">(</span>
+    train_file<span class="token punctuation">,</span>
+    profile_file<span class="token punctuation">,</span>
+    config<span class="token punctuation">,</span>
+    max_payload_bytes<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span>
+    rolling_packet_window<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">,</span>
+    time_window_seconds<span class="token operator">=</span><span class="token number">1.0</span><span class="token punctuation">,</span>
+    high_quantile<span class="token operator">=</span><span class="token number">0.995</span><span class="token punctuation">,</span>
+    low_quantile<span class="token operator">=</span><span class="token number">0.005</span><span class="token punctuation">,</span>
+    min_attack_score<span class="token operator">=</span><span class="token number">2.0</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre><p>It performs these steps:</p>
+<ol>
+<li>Loads the benign training CSV using <code>load_can_csv()</code>.</li>
+<li>Extracts features using <code>extract_features_for_rule_detector()</code>.</li>
+<li>Creates a <code>CANRuleBasedDetector</code>.</li>
+<li>Fits the detector on benign features using <code>fit()</code>.</li>
+<li>Saves the detector profile to JSON.</li>
+<li>Prints a summary of thresholds, known IDs, transitions, and feature settings.</li>
+<li>Returns the detector and training features dataframe.</li>
+</ol>
+<p>The training stage cell runs this function only when:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>RUN_TRAINING_STAGE <span class="token operator">=</span> <span class="token boolean">True</span>
+</code></pre><p>After the profile is created, the user should set it back to <code>False</code>.</p>
+<hr>
+<h2 id="16-evaluation-pipeline">16. Evaluation pipeline </h2>
+<p>The evaluation stage normally uses:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>evaluate_files_from_saved_profile<span class="token punctuation">(</span>
+    EVALUATION_FILES<span class="token punctuation">,</span>
+    DETECTOR_PROFILE_FILE<span class="token punctuation">,</span>
+    config<span class="token punctuation">,</span>
+    evaluation_mode<span class="token operator">=</span>EVALUATION_MODE<span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre><p>This function:</p>
+<ol>
+<li>Checks whether the detector profile JSON exists.</li>
+<li>Loads the profile with <code>CANRuleBasedDetector.load()</code>.</li>
+<li>Prints the detector summary.</li>
+<li>Calls <code>evaluate_files()</code>.</li>
+</ol>
+<p>For each evaluation file, <code>evaluate_files()</code>:</p>
+<ol>
+<li>Loads the CSV.</li>
+<li>Extracts features using the feature settings saved in the detector profile.</li>
+<li>Applies <code>detector.predict()</code>.</li>
+<li>Adds a <code>source_file</code> column.</li>
+<li>Computes metrics if true labels are available.</li>
+<li>Prints prediction distribution, average rule scores, top triggered rules, and most suspicious rows.</li>
+<li>Returns the predictions dataframe.</li>
+</ol>
+<p>If multiple evaluation files are provided, the function concatenates their results and prints combined results.</p>
+<hr>
+<h2 id="17-evaluation-metrics">17. Evaluation metrics </h2>
+<p>The notebook supports two evaluation modes:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>EVALUATION_MODE <span class="token operator">=</span> <span class="token string">"binary"</span>
+</code></pre><p>or:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>EVALUATION_MODE <span class="token operator">=</span> <span class="token string">"multiclass"</span>
+</code></pre><h3 id="binary-mode">Binary mode </h3>
+<p>Binary mode maps labels to:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>normal
+attack
+</code></pre><p>Values such as <code>0</code>, <code>normal</code>, <code>benign</code>, <code>false</code>, <code>none</code>, and <code>no_attack</code> are treated as normal. Everything else is treated as attack.</p>
+<p>Predicted labels are also mapped to binary:</p>
+<ul>
+<li><code>normal</code> remains <code>normal</code>.</li>
+<li><code>DoS</code>, <code>fuzzy</code>, <code>spoofing</code>, and <code>replay</code> become <code>attack</code>.</li>
+</ul>
+<h3 id="multiclass-mode">Multiclass mode </h3>
+<p>Multiclass mode maps labels to simplified attack families:</p>
+<table>
+<thead>
+<tr>
+<th>Label content</th>
+<th>Normalized class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dos</code>, <code>flood</code>, <code>frequency</code></td>
+<td><code>DoS</code></td>
+</tr>
+<tr>
+<td><code>fuzz</code>, <code>random</code>, <code>malformed</code></td>
+<td><code>fuzzy</code></td>
+</tr>
+<tr>
+<td><code>replay</code></td>
+<td><code>replay</code></td>
+</tr>
+<tr>
+<td><code>spoof</code>, <code>imperson</code>, <code>masquerade</code>, <code>payload</code>, <code>dlc</code>, <code>timing</code></td>
+<td><code>spoofing</code></td>
+</tr>
+<tr>
+<td>Normal keywords</td>
+<td><code>normal</code></td>
+</tr>
+</tbody>
+</table>
+<p>The notebook computes:</p>
+<ul>
+<li>Accuracy</li>
+<li>Precision</li>
+<li>Recall</li>
+<li>F1-score</li>
+<li>Confusion matrix</li>
+<li>Classification report</li>
+</ul>
+<hr>
+<h2 id="18-typical-usage-workflow">18. Typical usage workflow </h2>
+<h3 id="step-1-configure-paths-and-columns">Step 1: Configure paths and columns </h3>
+<p>Edit the user configuration cell:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>TRAINING_FILE <span class="token operator">=</span> <span class="token string">"benign_training_dataset.csv"</span>
+DETECTOR_PROFILE_FILE <span class="token operator">=</span> <span class="token string">"can_detector_profile.json"</span>
+EVALUATION_FILES <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"evaluation_dataset_with_attacks.csv"</span><span class="token punctuation">]</span>
+TIMESTAMP_COL <span class="token operator">=</span> <span class="token string">"timestamp"</span>
+ARBITRATION_ID_COL <span class="token operator">=</span> <span class="token string">"arbitration_id"</span>
+DATA_FIELD_COL <span class="token operator">=</span> <span class="token string">"data_field"</span>
+LABEL_COL <span class="token operator">=</span> <span class="token string">"attack"</span>
+</code></pre><h3 id="step-2-train-once">Step 2: Train once </h3>
+<p>Set:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>RUN_TRAINING_STAGE <span class="token operator">=</span> <span class="token boolean">True</span>
+RUN_EVALUATION_STAGE <span class="token operator">=</span> <span class="token boolean">False</span>
+</code></pre><p>Run the notebook through the training stage. This creates or updates <code>can_detector_profile.json</code>.</p>
+<h3 id="step-3-evaluate-repeatedly">Step 3: Evaluate repeatedly </h3>
+<p>Set:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>RUN_TRAINING_STAGE <span class="token operator">=</span> <span class="token boolean">False</span>
+RUN_EVALUATION_STAGE <span class="token operator">=</span> <span class="token boolean">True</span>
+</code></pre><p>Change only:</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>EVALUATION_FILES <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"new_evaluation_file.csv"</span><span class="token punctuation">]</span>
+</code></pre><p>Then rerun the evaluation stage. The detector loads the saved profile and does not retrain.</p>
+<hr>
+<h2 id="19-why-the-split-trainingevaluation-design-matters">19. Why the split training/evaluation design matters </h2>
+<p>The saved-profile design has several advantages:</p>
+<ol>
+<li>
+<p><strong>Efficiency</strong></p>
+<ul>
+<li>Thresholds are calculated once instead of every evaluation run.</li>
+</ul>
+</li>
+<li>
+<p><strong>Consistency</strong></p>
+<ul>
+<li>Evaluation uses exactly the thresholds and feature settings learned during training.</li>
+</ul>
+</li>
+<li>
+<p><strong>Reproducibility</strong></p>
+<ul>
+<li>The JSON profile records calibration settings, thresholds, known IDs, allowed DLCs, transitions, and per-ID profiles.</li>
+</ul>
+</li>
+<li>
+<p><strong>Operational realism</strong></p>
+<ul>
+<li>In a real IDS scenario, the detector profile would be trained on trusted benign data and then deployed to monitor future traffic.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="20-important-assumptions">20. Important assumptions </h2>
+<p>The notebook assumes:</p>
+<ol>
+<li>The training file contains only benign traffic.</li>
+<li>The benign training file is representative of normal vehicle/network behavior.</li>
+<li>CAN IDs, DLC values, timing, payload sums, and transitions are relatively stable under normal conditions.</li>
+<li>The evaluation files use the same timestamp units and schema mapping as training.</li>
+<li>Evaluation feature settings match training feature settings. This is enforced by saving feature settings in the profile.</li>
+</ol>
+<hr>
+<h2 id="21-limitations">21. Limitations </h2>
+<p>This detector is intentionally simple and interpretable. It is not a machine-learning classifier.</p>
+<p>Main limitations:</p>
+<ol>
+<li>
+<p><strong>Dependence on benign training quality</strong></p>
+<ul>
+<li>If normal behavior is missing from the benign training file, the detector may flag valid traffic as anomalous.</li>
+</ul>
+</li>
+<li>
+<p><strong>Static thresholds</strong></p>
+<ul>
+<li>Thresholds are fixed after training. They do not adapt online unless the profile is retrained.</li>
+</ul>
+</li>
+<li>
+<p><strong>Limited payload modeling</strong></p>
+<ul>
+<li>Payload behavior is summarized using byte sum, entropy, and hamming distance. The detector does not model full signal semantics.</li>
+</ul>
+</li>
+<li>
+<p><strong>Transition sensitivity</strong></p>
+<ul>
+<li>Unexpected ID transitions may be noisy if the training file does not include all normal driving states.</li>
+</ul>
+</li>
+<li>
+<p><strong>Attack family approximation</strong></p>
+<ul>
+<li>Rule labels such as <code>DoS</code>, <code>fuzzy</code>, <code>spoofing</code>, and <code>replay</code> are heuristic categories. A real attack may trigger multiple categories.</li>
+</ul>
+</li>
+<li>
+<p><strong>Timestamp assumptions</strong></p>
+<ul>
+<li>Rate and timing features assume meaningful numeric timestamps. If timestamps are missing, unsorted, or use inconsistent units, timing rules become less reliable.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="22-interpreting-results">22. Interpreting results </h2>
+<p>When reviewing output, focus on:</p>
+<ol>
+<li>
+<p><code>predicted_label</code></p>
+<ul>
+<li>The final label assigned by the detector.</li>
+</ul>
+</li>
+<li>
+<p><code>max_rule_score</code></p>
+<ul>
+<li>Higher scores indicate stronger rule-based evidence.</li>
+</ul>
+</li>
+<li>
+<p><code>score_DoS</code>, <code>score_fuzzy</code>, <code>score_spoofing</code>, <code>score_replay</code></p>
+<ul>
+<li>These show which attack family received the strongest support.</li>
+</ul>
+</li>
+<li>
+<p><code>rule_*</code> columns</p>
+<ul>
+<li>These are the most important explanation fields because they show exactly why a packet was flagged.</li>
+</ul>
+</li>
+<li>
+<p>Top suspicious rows</p>
+<ul>
+<li>The notebook sorts packets by <code>max_rule_score</code> to show the most suspicious packets first.</li>
+</ul>
+</li>
+</ol>
+<p>A packet can trigger multiple rules. The final class is the class with the highest total score, unless the score is below <code>MIN_ATTACK_SCORE</code>.</p>
+<hr>
+<h2 id="23-practical-tuning-guidance">23. Practical tuning guidance </h2>
+<p>The most important parameters to tune are:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Effect of increasing it</th>
+<th>Effect of decreasing it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HIGH_QUANTILE</code></td>
+<td>More tolerant upper thresholds, fewer false positives, possible missed attacks.</td>
+<td>Stricter upper thresholds, more detections, possible false positives.</td>
+</tr>
+<tr>
+<td><code>LOW_QUANTILE</code></td>
+<td>Higher lower threshold if increased, stricter for small timing gaps.</td>
+<td>Lower lower threshold, more tolerant of small timing gaps.</td>
+</tr>
+<tr>
+<td><code>MIN_ATTACK_SCORE</code></td>
+<td>Requires stronger evidence to flag attacks.</td>
+<td>Flags packets with weaker evidence.</td>
+</tr>
+<tr>
+<td><code>TIME_WINDOW_SECONDS</code></td>
+<td>Smoother rate estimates over longer windows.</td>
+<td>More reactive rate estimates over shorter windows.</td>
+</tr>
+<tr>
+<td><code>ROLLING_PACKET_WINDOW</code></td>
+<td>Smoother ID diversity/entropy estimates.</td>
+<td>More reactive ID diversity/entropy estimates.</td>
+</tr>
+</tbody>
+</table>
+<p>For an academic or prototype setting, the current defaults are a reasonable interpretable starting point. For a real deployment, thresholds should be validated on multiple benign driving scenarios.</p>
+<hr>
+<h2 id="24-summary">24. Summary </h2>
+<p>The notebook implements a compact, interpretable CAN intrusion detector with a clean separation between training and evaluation.</p>
+<p>The training stage learns a benign profile consisting of:</p>
+<ul>
+<li>Known CAN IDs</li>
+<li>Allowed DLCs per ID</li>
+<li>Global timing/rate/diversity/payload thresholds</li>
+<li>Per-ID timing/rate/payload thresholds</li>
+<li>Allowed CAN-ID transitions</li>
+<li>Feature extraction settings</li>
+</ul>
+<p>The evaluation stage reuses this saved profile and applies explicit rules for:</p>
+<ul>
+<li>DoS / flooding behavior</li>
+<li>Fuzzy or malformed traffic</li>
+<li>Spoofing or profile deviation</li>
+<li>Replay-like repeated payloads with abnormal timing</li>
+</ul>
+<p>The result is a simpler detector than the original version, with fewer features, fewer rules, and a clearer explanation path for every prediction.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
